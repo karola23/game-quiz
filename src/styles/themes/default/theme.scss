@@ -1,0 +1,21 @@
+@import "../../variables";
+@import "../../mixins";
+@import "../../fonts";
+@import "../../global";
+
+// import components styles
+@import "./components/background";
+
+@import "./components/box";
+@import "./components/button";
+@import "./components/card";
+@import "./components/header";
+@import "./components/logo";
+@import "./components/placeholder";
+@import "./components/title";
+
+// import pages styles
+@import "./pages/category";
+@import "./pages/intro";
+@import "./pages/quiz";
+@import "./pages/result";

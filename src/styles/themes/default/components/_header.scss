@@ -1,0 +1,54 @@
+.header {
+  position: relative;
+  max-width: $wrapper-high;
+  margin: auto;
+  user-select: none;
+
+  &__img {
+    height: pxToRem(60);
+  }
+
+  &__icons {
+    position: absolute;
+    width: 90%;
+    top: 0;
+    left: 0;
+    width: nth($sizes, 12);
+    height: nth($sizes, 4);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 $space-small;
+
+    img {
+      cursor: pointer;
+      height: 100%;
+      transition: filter 0.3s ease-in-out;
+
+      &:hover {
+        filter: brightness(0.7);
+      }
+
+      &:active {
+        transform: translate(1px, 1px);
+      }
+    }
+
+    &--space {
+      margin-right: $space-medium;
+    }
+  }
+}
+
+@media only screen and (max-width: $break-mobile) {
+  .header {
+    transform: scale(0.7);
+    min-width: pxToRem(300);
+
+    &__icons {
+      height: nth($sizes, 6);
+      top: nth($sizes, 2);
+      justify-content: space-between;
+    }
+  }
+}

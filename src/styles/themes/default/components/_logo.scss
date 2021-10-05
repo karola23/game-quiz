@@ -1,0 +1,15 @@
+.logo {
+  text-align: left;
+  padding: $space-medium;
+  user-select: none;
+
+  img {
+    width: pxToRem(80);
+  }
+}
+
+@media only screen and (max-width: $break-mobile) {
+  .logo {
+    display: none;
+  }
+}

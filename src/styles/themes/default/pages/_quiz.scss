@@ -1,0 +1,66 @@
+.quiz {
+  padding: 0 $space-standard;
+
+  &__title {
+    margin: $space-large 0;
+  }
+
+  &__question {
+    width: $wrapper-mid;
+    margin: 0 auto $space-x-large;
+  }
+
+  &__placeholder {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-standard;
+  }
+
+  &__answers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: stretch;
+    gap: pxToRem(20);
+    margin: auto;
+    padding-top: $space-large;
+    max-width: $wrapper-laptop;
+
+    &--vertical {
+      display: grid;
+      justify-content: center;
+      gap: pxToRem(10);
+    }
+  }
+}
+
+@media only screen and (max-width: $break-mobile) {
+  .quiz::before {
+    @include gradientTitle();
+  }
+
+  .quiz {
+    &__title {
+      margin: 0;
+    }
+
+    &__question {
+      width: auto;
+      margin: $space-x-small auto;
+    }
+
+    &__placeholder {
+      p {
+        text-align: left;
+        font-size: pxToRem(14);
+        overflow-wrap: anywhere;
+      }
+    }
+
+    &__answers {
+      grid-template-columns: 1fr;
+      gap: pxToRem(15);
+      padding-top: $space-small;
+    }
+  }
+}

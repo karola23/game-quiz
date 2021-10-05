@@ -1,0 +1,22 @@
+.placeholder {
+  border-radius: pxToRem(18);
+  background: $c-opacity;
+  width: pxToRem(254);
+  height: pxToRem(88);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: $break-mobile) {
+  .placeholder {
+    min-width: pxToRem(180);
+    height: pxToRem(68);
+  }
+}
+
+@media only screen and (max-width: $break-xs) {
+  .placeholder {
+    height: pxToRem(38);
+    min-width: pxToRem(200);
+  }
+}

@@ -1,0 +1,88 @@
+//  Colors
+//==========================================================================
+$c-black: #000;
+$c-white: #fff !default;
+$c-cloudy: #a7a6a5;
+$c-opacity: #0000001a;
+
+$c-lilacBush: #8f6dd1;
+$c-lilacBush-opacity: #8f6dd180;
+$c-grape: #4a2060;
+$c-minsk: #502d78;
+$c-valhalla: #2b1845;
+$c-brilliantRose: #f849b3;
+
+$c-cloud: #c5c0bd;
+$c-cloud-opacity: #c5c0bd80;
+$c-donkeyBrown: #a6927d;
+$c-indianKhaki: #c1ac94;
+$c-Brownblack: #060505;
+$c-kabul: #554943;
+
+$c-toreaBay: #0e308a;
+$c-denim: #124be4;
+$c-blueZodiac: #0b0f35;
+$c-blueRibbon: #1057ff;
+
+$c-silver: #c7c7c7;
+$c-doveGray: #696969;
+$c-silver: #cccccc;
+
+$c-seance: #8d268b;
+$c-seance-opacity: #8d268b80;
+$c-haiti: #111038;
+
+// Fonts
+//==========================================================================
+$f-baseFontFamily: "Montserrat", sans-serif;
+
+// Breaks
+//==========================================================================
+$break-xs: 374px;
+$break-mobile: 767px;
+$break-mid: 991px;
+$break-laptop: 1299px;
+$break-high: 1600px;
+
+// Minimum device sizes
+//==========================================================================
+$tablet-min: 768px;
+$desktop-min: 1200px;
+
+// Grid
+//==========================================================================
+$wrapper: 1302px;
+$wrapper-high: 1200px;
+$wrapper-laptop: 990px;
+$wrapper-mid: 800px;
+$wrapper-mobile: 480px;
+$columns: 12;
+$padding: 15px;
+$grid-md: 768px;
+$grid-lg: 992px;
+$grid-xl: 1199px;
+$card-standard: 180px;
+$card-mobile: 140px;
+$card-mobile-xs: 120px;
+$card-mobile-xxs: 110px;
+
+// Paddings, Margins
+//==========================================================================
+$space-x-small: 10px;
+$space-small: 15px;
+$space-standard: 20px;
+$space-medium: 30px;
+$space-large: 40px;
+$space-x-large: 50px;
+$space-xx-large: 60px;
+
+// Buttons
+//==========================================================================
+$button-small: 175px;
+$button-medium: 294px;
+$button-large: 375px;
+
+// Lists
+//==========================================================================
+$sizes: 8.33%, 16.66%, 25%, 33.33%, 41.66%, 50%, 58.33%, 66.66%, 75%, 83.33%,
+  91.66%, 100%;

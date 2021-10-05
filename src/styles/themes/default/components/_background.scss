@@ -1,0 +1,127 @@
+.container {
+  background: no-repeat center center fixed;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  overflow-y: auto;
+
+  @include scrollbar();
+}
+
+.automotive {
+  @include globalTheme(
+    $c-white,
+    $c-lilacBush-opacity,
+    $c-toreaBay,
+    $c-denim,
+    $c-blueZodiac,
+    $c-blueRibbon
+  );
+}
+
+.variant-a1 {
+  @include style("../assets/bg_a1.png");
+}
+
+.variant-a2 {
+  @include style("../assets/bg_a2.png");
+}
+
+.variant-a3 {
+  @include style("../assets/bg_a3.png");
+}
+
+.culture {
+  @include globalTheme(
+    $c-white,
+    $c-lilacBush-opacity,
+    $c-doveGray,
+    $c-silver,
+    $c-doveGray,
+    $c-silver
+  );
+}
+
+.variant-c1 {
+  @include style("../assets/bg_c1.png");
+}
+
+.variant-c2 {
+  @include style("../assets/bg_c2.png");
+}
+
+.variant-c3 {
+  @include style("../assets/bg_c3.png");
+}
+
+.history {
+  @include globalTheme(
+    $c-cloud,
+    $c-cloud-opacity,
+    $c-donkeyBrown,
+    $c-indianKhaki,
+    $c-Brownblack,
+    $c-kabul
+  );
+}
+
+.variant-h1 {
+  @include style("../assets/bg_h1.png");
+}
+
+.variant-h2 {
+  @include style("../assets/bg_h2.png");
+}
+
+.variant-h3 {
+  @include style("../assets/bg_h3.png");
+}
+
+.programming {
+  @include globalTheme(
+    $c-lilacBush,
+    $c-lilacBush-opacity,
+    $c-grape,
+    $c-minsk,
+    $c-valhalla,
+    $c-brilliantRose
+  );
+}
+
+.variant-p1 {
+  @include style("../assets/bg_p1.png");
+}
+
+.variant-p2 {
+  @include style("../assets/bg_p2.png");
+}
+
+.variant-p3 {
+  @include style("../assets/bg_p3.png");
+}
+
+.technology {
+  @include globalTheme(
+    $c-seance,
+    $c-seance-opacity,
+    $c-grape,
+    $c-seance,
+    $c-haiti,
+    $c-brilliantRose
+  );
+}
+
+.variant-t1 {
+  @include style("../assets/bg_t1.png");
+}
+
+.variant-t2 {
+  @include style("../assets/bg_t2.png");
+}
+
+.variant-t3 {
+  @include style("../assets/bg_t3.png");
+}

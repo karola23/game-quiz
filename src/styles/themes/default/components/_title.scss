@@ -1,0 +1,44 @@
+.center-title {
+  margin: 0 auto;
+}
+
+.title {
+  position: relative;
+  max-width: $wrapper-mid;
+  padding: $space-small;
+
+  &__txt {
+    padding: $space-small;
+    text-transform: uppercase;
+    font-size: pxToRem(20);
+  }
+
+  &__counter {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    span {
+      color: $c-brilliantRose;
+    }
+  }
+}
+
+@media only screen and (max-width: $break-mobile) {
+  .title {
+    &__txt {
+      font-size: pxToRem(14);
+    }
+
+    &__counter {
+      width: pxToRem(50) !important;
+      height: pxToRem(50) !important;
+      top: 15%;
+      right: -2%;
+
+      span {
+        color: $c-brilliantRose;
+      }
+    }
+  }
+}

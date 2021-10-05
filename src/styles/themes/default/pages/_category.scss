@@ -1,0 +1,23 @@
+.category {
+  padding: 0 $space-standard;
+
+  &__title {
+    margin: $space-large 0;
+  }
+
+  &__box {
+    width: fit-content;
+    margin: 0 auto $space-x-large;
+  }
+
+  &__button {
+    width: fit-content;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: $break-mobile) {
+  .category::before {
+    @include gradientTitle();
+  }
+}

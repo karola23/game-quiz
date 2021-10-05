@@ -1,0 +1,17 @@
+.box {
+  text-align: center;
+  height: pxToRem(120);
+  user-select: none;
+  width: max-content;
+
+  &__img {
+    height: nth($sizes, 6);
+  }
+
+  &__text {
+    border-top: 1px solid $c-brilliantRose;
+    width: max-content;
+    padding-top: $space-x-small;
+    text-transform: uppercase;
+  }
+}

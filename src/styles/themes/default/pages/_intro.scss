@@ -1,0 +1,38 @@
+.intro {
+  padding: 0 $space-standard;
+
+  &__title {
+    margin: $space-large 0;
+  }
+
+  &__categories {
+    max-width: $wrapper-high;
+    padding-top: $space-large;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+@media only screen and (max-width: $break-mobile) {
+  .intro::before {
+    @include gradientTitle();
+  }
+
+  .intro {
+    &__title {
+      margin: 0;
+    }
+
+    &__categories {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      width: nth($sizes, 11);
+      margin: auto;
+      text-align: center;
+      padding-top: 0;
+    }
+  }
+}

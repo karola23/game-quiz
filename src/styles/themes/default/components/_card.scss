@@ -1,0 +1,59 @@
+.nav-link {
+  display: block;
+  width: min-content;
+  margin-left: auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: $card-standard;
+  height: $card-standard;
+  padding: 0 $space-small $space-small;
+  margin: $space-x-small 0;
+  border-radius: 10%;
+  text-align: left;
+  box-sizing: border-box;
+  user-select: none;
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+  }
+
+  &__img {
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+    img {
+      width: nth($sizes, 5);
+    }
+  }
+
+  &__text {
+    font-size: pxToRem(14);
+    border-top: 1px solid $c-brilliantRose;
+    padding-top: $space-x-small;
+    text-transform: uppercase;
+    color: $c-white;
+  }
+}
+
+@media only screen and (max-width: $break-mobile) {
+  .nav-link {
+    margin-left: 0;
+  }
+
+  .card {
+    margin: $space-x-small;
+    padding: 0 pxToRem(5) pxToRem(5);
+  }
+
+  @include card($card-mobile, 14);
+}
+
+@media only screen and (max-width: $break-xs) {
+  @include card($card-mobile-xs, 12);
+}

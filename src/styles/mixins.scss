@@ -1,0 +1,200 @@
+// converting px to rem
+@function pxToRem($pxsize, $rembase: 16) {
+  @return ($pxsize / $rembase) + rem;
+}
+
+// Scrollbar
+@mixin scrollbar(
+  $scrollSize: 4px,
+  $backgroundTrack: #333,
+  $backgroundThumb: #aaa,
+  $scrollRadius: 0px
+) {
+  scrollbar-width: thin;
+  scrollbar-color: $backgroundTrack $backgroundThumb;
+
+  &::-webkit-scrollbar {
+    width: $scrollSize;
+  }
+  &::-webkit-scrollbar-track {
+    background: $backgroundTrack;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $backgroundThumb;
+    border-radius: $scrollRadius;
+  }
+}
+
+// Background
+@mixin style($bgImage) {
+  background-image: url($bgImage);
+}
+
+// Themes
+@mixin setBorder($color) {
+  border: 2px solid $color;
+}
+
+@mixin setShadow($color) {
+  filter: drop-shadow(2px 2px 4px $color);
+}
+
+@mixin setGradientTitle($color) {
+  // prettier-ignore
+  background: linear-gradient(90deg, transparent 0%, $color 50%, transparent 100%) no-repeat;
+}
+
+@mixin setGradientElement($color-dark, $color-light) {
+  // prettier-ignore
+  background: linear-gradient(45deg, $color-dark 0%, $color-light 50%, $color-dark 100%)
+    no-repeat;
+}
+
+@mixin setGradientElementHorizontal($color-dark, $color-light) {
+  // prettier-ignore
+  background: linear-gradient(90deg, $color-dark 0%, $color-light 50%, $color-dark 100%)
+    no-repeat;
+}
+
+@mixin setGradientElementHorizontalCircle($color-dark, $color-light) {
+  // prettier-ignore
+  background: linear-gradient(90deg, $color-dark 0%, $color-light 100%)
+    no-repeat;
+}
+
+@mixin setGradientElementHover($color-dark, $color-light) {
+  background: linear-gradient(45deg, $color-light 0%, $color-dark 100%)
+    no-repeat;
+}
+
+@mixin setGradientElementHorizontalHover($color-dark, $color-light) {
+  background: linear-gradient(90deg, $color-light 0%, $color-dark 100%)
+    no-repeat;
+}
+
+@mixin setGradientRadial($color) {
+  background: radial-gradient(circle at top, $color 16%, transparent 25%)
+    no-repeat;
+}
+
+// Global Theme
+@mixin globalTheme(
+  $c-border: $c-lilacBush,
+  $c-border-opacity: $c-lilacBush-opacity,
+  $c-title-gradient: $c-grape,
+  $c-vetical-gradient-light: $c-minsk,
+  $c-vetical-gradient-dark: $c-valhalla,
+  $c-extra: $c-brilliantRose
+) {
+  .btn {
+    @include setBorder($c-border);
+    @include setGradientElementHorizontal(
+      $c-vetical-gradient-dark,
+      $c-vetical-gradient-light
+    );
+    background-size: 200%;
+    transition: background 0.3s ease-in-out;
+
+    &:hover,
+    &:active {
+      background-position: right;
+    }
+  }
+
+  .card {
+    @include setBorder($c-border);
+    @include setShadow($c-border-opacity);
+    @include setGradientElement(
+      $c-vetical-gradient-dark,
+      $c-vetical-gradient-light
+    );
+    background-size: 200%;
+    transition: background 0.3s ease-in-out;
+
+    &:hover,
+    &:active {
+      background-position: right top;
+    }
+  }
+
+  .placeholder {
+    @include setBorder($c-border);
+  }
+
+  .title {
+    &__txt {
+      @include setGradientTitle($c-title-gradient);
+    }
+
+    &__counter {
+      @include circle(
+        80,
+        18,
+        $c-vetical-gradient-dark,
+        $c-vetical-gradient-light
+      );
+    }
+  }
+
+  .intro::before,
+  .category::before,
+  .quiz::before,
+  .result::before {
+    background: radial-gradient(circle at top, $c-extra 16%, transparent 25%);
+  }
+
+  .result {
+    &__score {
+      @include circle(
+        100,
+        22,
+        $c-vetical-gradient-dark,
+        $c-vetical-gradient-light
+      );
+    }
+  }
+}
+
+// Circle
+@mixin circle(
+  $circleSize: 80,
+  $circleFont: 18,
+  $bgDark: $c-valhalla,
+  $bgLight: $c-minsk
+) {
+  @include setGradientElementHorizontalCircle($bgDark, $bgLight);
+  color: $c-white;
+  border: 2px solid $c-white;
+  border-radius: 50%;
+  box-sizing: border-box;
+  width: pxToRem($circleSize);
+  height: pxToRem($circleSize);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: pxToRem($circleFont);
+}
+
+// Card
+@mixin card($cardSize, $cardFont) {
+  .card {
+    margin-left: auto;
+    max-width: $cardSize;
+    max-height: $cardSize;
+
+    &__text {
+      font-size: pxToRem($cardFont);
+    }
+  }
+}
+
+// Gradient title
+@mixin gradientTitle() {
+  content: "";
+  position: absolute;
+  top: -15%;
+  left: 0;
+  width: nth($sizes, 12);
+  height: nth($sizes, 12);
+  filter: blur(20px);
+}
